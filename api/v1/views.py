@@ -12,6 +12,7 @@ from robots.domain.factories import get_create_robot_usecase
 
 
 @method_decorator(csrf_exempt, name="dispatch")
+# так лучше не делать, особенно когда форму используем, но для данного случая ок, потому что нет авторизации
 class CreateRobotAPIView(views.View):
     _usecase = get_create_robot_usecase()
 
@@ -33,3 +34,6 @@ class CreateRobotAPIView(views.View):
             status_code, data = 400, form.errors.get_json_data()
 
         return JsonResponse(status=status_code, data=data)
+
+
+create_robot_apiview = CreateRobotAPIView.as_view()
