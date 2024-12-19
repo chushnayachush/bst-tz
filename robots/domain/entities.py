@@ -15,6 +15,7 @@ class CreateRobotRequestEntity(BaseEntity):
 
 @dataclass(frozen=True)
 class RobotEntity(BaseEntity):
+    id: int
     serial: str
     model: str
     version: str

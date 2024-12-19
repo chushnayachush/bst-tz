@@ -18,6 +18,7 @@ class RobotDAO:
         )
 
         return RobotEntity(
+            id=robot_obj.id,
             serial=robot_obj.serial,
             model=robot_obj.model,
             version=robot_obj.version,
